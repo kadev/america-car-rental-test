@@ -1,0 +1,487 @@
+/**************
+*** GLOBALS ***
+***************/
+
+body{
+    background-color: #f7f7f7;
+}
+
+#content {
+    margin-top: 120px;
+}
+
+#btn-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #025ed3;
+    padding: 10px 12px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#btn-up svg{
+    width: 12px;
+    fill: white;
+}
+
+/****************
+**** HEADER ****
+***************/
+
+.ui.fixed.inverted.menu {
+    padding: 0.6rem 0;
+}
+
+.ui.inverted.menu .item::before {
+    background: none !important;
+}
+
+.ui.inverted.menu {
+    background: #025ed3;
+}
+
+.header .logo {
+    width: 150px !important;
+}
+
+#nav-menu a{
+    font-weight: 700;
+    color: white;
+}
+
+#nav-menu .item {
+    padding: 0.92857143em 0;
+    margin: 0 1.2rem;
+    font-size: 1.2rem;
+}
+
+#nav-menu .item:not(.active) {
+    padding-bottom: 1.3rem;
+}
+
+#nav-menu .item:hover {
+    background: none;
+    opacity: 0.8;
+}
+
+#nav-menu .item.active {
+    border-bottom: 3px solid white;
+}
+
+#mb-menu {
+    display: none;
+}
+
+#mb-menu svg {
+    width: 30px !important;
+    fill: white;
+}
+
+/**********************
+*** SIDEBAR MOBILE ***
+*********************/
+
+#sidebar {
+    min-width: 250px;
+    max-width: 90%;
+    min-height: 100vh;
+    margin-top: -105px;
+}
+
+#sidebar.active {
+    margin-left: -90%;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+#sidebar {
+    background: #025ed3;
+    color: #fff;
+    transition: all 0.3s;
+    position: fixed !important;
+    z-index: 10000;
+    width: 90%;
+    margin-left: -90%;
+}
+
+#sidebar .logo {
+    max-width: 200px;
+}
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #0053BC;
+}
+
+#sidebar ul.components {
+    padding: 20px 30px;
+    list-style: none !important;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li {
+    padding: 10px 0;
+}
+
+#sidebar ul li a {
+    color: white;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    color: lightgray;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+
+/* display .overlay when it has the .active class */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+
+
+#close-sidebar {
+    cursor: pointer;
+    position: absolute !important;
+    right: 5px;
+    top: 5px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -90%;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+/* END SIDEBAR STYLES*/
+
+/**********************
+**** SHOPPING CART ***
+*********************/
+
+#cart {
+    position: relative;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#cart:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+#cart .qty-products {
+    background-color: white;
+    color: #0053BC;
+    padding: 0px 5px;
+    position: absolute;
+    top: 0;
+    right: -5px;
+    border-radius: 50px;
+}
+
+#shoppint-cart-modal .content {
+    display: flex;
+}
+
+#shoppint-cart-modal .content > .image {
+    width: 30%;
+}
+
+#shoppint-cart-modal .content > .image img {
+    width: 100%;
+}
+
+#shoppint-cart-modal .content > .products-info {
+    width: 70%;
+}
+
+#shoppint-cart-modal .right.floated.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#shoppint-cart-modal .content {
+    display: flex;
+    align-items: center;
+}
+
+#shoppint-cart-modal .products-info .content .image{
+    margin-right: 1rem;
+    width: 30px;
+}
+
+#shoppint-cart-modal .cart-totals p {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    text-align: right;
+}
+
+
+
+.ui.header {
+    font-size: 3rem !important;
+    text-align: center;
+}
+
+.ui.subtitle {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+/**************
+**** CARDS ****
+***************/
+
+.card {
+    width: 100% !important;
+    padding: 0 1.5rem !important;
+}
+
+.card .image {
+    margin: 16px 0;
+}
+
+.card .meta .data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .meta .data svg {
+    width: 15px;
+    margin-right: 10px !important;
+}
+
+.card .meta .data img {
+    margin-right: 10px !important;
+}
+
+.card .content .header {
+    margin-bottom: 10px;
+}
+
+.card .content .price {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 !important;
+}
+
+.card .content .price span {
+    padding: 1rem;
+    background-color: #8eeb4f !important;
+    color: #565156 !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    border-bottom-right-radius: 0 !important;
+}
+
+.card .extra.content {
+    display: flex;
+    justify-content: center;
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-bottom: 1rem;
+}
+
+.card .add-to-cart, .card .add-car {
+    background-color: #025ed3;
+    color: white !important;
+    border-radius: 50px;
+    width: 80%;
+}
+
+.card .add-to-cart:hover, .card .add-car:hover{
+ background-color: #48c400;
+}
+
+.dots {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.dots span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    border: 2px solid #025ed3;
+    margin-right: 1rem;
+}
+
+.dots span.active {
+    background-color: #025ed3;
+}
+
+/****************************
+**** RESERVE VIEW STYLES ****
+*****************************/
+
+.car.image {
+    border: 2px solid #025ed3 !important;
+}
+
+.car.description .feature {
+    display: flex !important;
+
+}
+
+.car.description .feature div:first-child {
+    margin-right: 2rem;
+}
+
+.extra-product-info {
+    display: flex;
+    align-items: center;
+}
+
+.extra-product-info p {
+    left: 2rem;
+}
+
+.extra-product-info p {
+    font-weight: bold;
+}
+
+.extra-product-info div.img-container {
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
+}
+
+.qty-container .basic.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #025ed3;
+}
+
+.qty-container .basic.label i {
+    color: white;
+    margin: 0;
+}
+
+.qty-container .increase-qty, .qty-container .decrease-qty {
+    cursor: pointer;
+}
+
+.qty-container .increase-qty.disabled, .qty-container .decrease-qty.disabled{
+    background-color: darkgray;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* END RESERVE VIEW STYLES*/
+
+
+/******************
+**** UTILITIES ****
+*******************/
+
+.text-bold {
+    font-weight: bold;
+}
+
+.hidden.mobile {
+    display: contents !important;
+}
+
+
+/*****************************
+**** CUSTOM MOBILE STYLES ****
+******************************/
+
+@media only screen and (max-width: 767px) {
+    #mb-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    #nav-menu .item:not(#mb-menu){
+        display: none;
+    }
+
+    .ui.header {
+        font-size: 2rem !important;
+    }
+
+    .ui.subtitle {
+        margin-bottom: 30px;
+    }
+
+    .hidden.mobile {
+        display: none !important;
+    }
+
+    #extras-container tr {
+        text-align: center;
+    }
+
+    #shoppint-cart-modal .content {
+        align-items: center;
+    }
+
+    #shoppint-cart-modal .content .ui.avatar.image {
+        margin: 0 !important;
+        margin-right: 1rem !important;
+        padding: 0 !important;
+    }
+
+    #shoppint-cart-modal > .content {
+        flex-direction: column;
+    }
+
+    #shoppint-cart-modal .content .products-info {
+        width: 100% !important;
+    }
+
+    #shoppint-cart-modal .content > .image {
+        width: 60%;
+    }
+}
